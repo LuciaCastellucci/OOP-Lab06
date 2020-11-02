@@ -1,7 +1,9 @@
 package it.unibo.oop.lab.collections1;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 
 
 /**
@@ -11,7 +13,7 @@ import java.util.LinkedList;
 public final class UseCollection {
 	
 	private static final int MIN_VALUE = 1000;
-	private static final int MAX_VALUE = 2000;
+	private static final int MAX_VALUE = 1999;
 	
 
     private UseCollection() {
@@ -87,8 +89,23 @@ public final class UseCollection {
          * 
          * Oceania -> 38,304,000
          */
+    	
+    	final Map < String , String > worldmap = new HashMap < >() ;
+    	worldmap.put ("Africa", "1110635000");
+    	worldmap.put("Americas", "972005000");
+    	worldmap.put("Antarctica", "0");
+    	worldmap.put("Asia", "42987230");
+    	worldmap.put("Europe", "742452000");
+    	worldmap.put("Oceania", "38304000");
         /*
          * 8) Compute the population of the world
          */
+    	
+    	long worldPopulation; 
+    	worldPopulation = 0;
+    	for (var n: worldmap.values()) {
+    		worldPopulation = + (long) Integer.parseInt(n);
+    	}
+    	System.out.println(worldPopulation);
     }
 }
